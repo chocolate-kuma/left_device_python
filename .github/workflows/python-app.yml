@@ -27,7 +27,8 @@ jobs:
         run: pyinstaller main.py --onefile --add-data "sample.icns:." --noconsole --icon=sample.icns --windowed # macOS, Linux
 
       - name: Create ZIP file
-        run: zip -r main.zip . -i dist/main.app
+        run: cd dist
+          zip -r main.zip main.app
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
