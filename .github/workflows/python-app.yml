@@ -20,7 +20,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          python -m pip install --upgrade pip
+          pip install pyinstaller
 
       - name: Build executable
         run: pyinstaller main.py --onefile --add-data "sample.icns:." --noconsole --icon=sample.icns --windowed # macOS, Linux
